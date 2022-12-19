@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate')%>
+
+      <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title"><%= student.name %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Class: <%= student.class %></li>
+        <li class="list-group-item">Place: <%= student.place %></li>
+        <li class="list-group-item">Mother Name: <%= student.motherName %></li>
+        <li class="list-group-item">Father Name: <%= student.fatherName %></li>
+        <li class="list-group-item">Parent Ph.No: <%= student.mobile %></li>
+        <li class="list-group-item">Centre Name: <a href="/students?centre=<%= student.centre %>"><%= student.centre %></a></li>
+        
+        </ul>
+       
+        <div class="card-body">
+            <a class="card-link btn btn-info" href="/students/<%= student._id%>/edit">Edit</a>
+            <form class="d-inline" action="/students/<%=student._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+        
+        <div class="card-footer text-muted">
+            <button type="button" class="btn btn-primary"><a href="/students" class="text-light ">All Student</a></button>
+        
+        </div>
+    </div>

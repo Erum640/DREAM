@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate')%>
+    <h1 class="text-white"><%=centre  %> CENTRE STUDENTS!!</h1>
+    
+    
+    
+    
+    <table class="table text-white">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Students Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let student of students) {%> 
+            <tr class="table text-white">
+                <td>*</td>
+                <td><a href="/students/<%=student._id%>"><%= student.name  %> </a></td>
+            </tr>
+            <% } %> 
+            
+         
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary text-white"><a href="/students/new" class="text-light ">New Student</a></button>
+    <% if(centre !== 'All') {%> 
+    <a href="/students">All Students</a>
+    <button type="button" class="btn btn-primary text-white"><a href="/students" class="text-light ">All Students</a></button>
+    <% } %>
+    
